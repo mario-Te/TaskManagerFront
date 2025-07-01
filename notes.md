@@ -1,0 +1,1 @@
+# Run prettier formatter for tailwind css: npm run format

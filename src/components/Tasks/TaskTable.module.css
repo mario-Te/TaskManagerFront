@@ -1,0 +1,28 @@
+.taskTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: black;
+}
+
+.taskTable th,
+.taskTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.taskTable th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    background-color: #E44232;
+    color: white;
+}
+
+.taskTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.taskTable button {
+    margin-right: 5px;
+}
