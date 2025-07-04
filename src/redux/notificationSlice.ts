@@ -2,7 +2,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Task } from "../types/task";
-const API_URL = "https://taskmanagerback-0bu3.onrender.com/task";
+const API_URL = "http://localhost:3000/task";
 
 
 interface NotificationsState {
@@ -22,7 +22,9 @@ const initialState: NotificationsState = {
 export const fetchNotifications = createAsyncThunk<Task[]>(
     "notifications/fetchNotifications",
     async () => {
-        const response = await axios.get(`${API_URL}/unseen`);
+        const response = await axios.get(`${API_URL}/unseen`, {
+            withCredentials: true,
+        });
         return response.data;
     }
 );
@@ -30,7 +32,10 @@ export const fetchNotifications = createAsyncThunk<Task[]>(
 export const markNotificationAsRead = createAsyncThunk<string, string>(
     "notifications/markAsRead",
     async (notificationId: string) => {
-        await axios.patch(`${API_URL}/${notificationId}`);
+        await axios.post(`${API_URL}/see-task`, { notificationId }, {
+            withCredentials: true,
+
+        });
         return notificationId;
     }
 );

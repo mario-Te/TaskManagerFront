@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Task } from "../types/task";
 import axios from "axios";
-const API_URL = "https://taskmanagerback-0bu3.onrender.com/task";
+const API_URL = "http://localhost:3000/task/";
 
 interface TaskState {
   tasks: Task[];

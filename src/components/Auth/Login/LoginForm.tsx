@@ -33,6 +33,7 @@ function LoginForm() {
     e.preventDefault();
     try {
       const response = await loginUser({ email, password });
+      localStorage.setItem("name",response.name);
       document.cookie = `token=${response.token}; path=/`;
       axios.defaults.headers.common["Authorization"] = `Bearer ${response.token}`;
       navigate("/home");

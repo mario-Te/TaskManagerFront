@@ -1,12 +1,14 @@
 import axios from "axios";
-const API_URL = "https://taskmanagerback-0bu3.onrender.com/user";
+const API_URL = "http://localhost:3000/user";
 interface UserData {
+  name?: string,
   email: string,
   password: string,
   confirmPassword?: string
 }
 
 interface Credentials {
+  name?: string,
   email: string,
   password: string
 }

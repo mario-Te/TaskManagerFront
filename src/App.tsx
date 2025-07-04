@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider,Navigate } from "react-router-dom";
 import Register from "./components/Auth/Register/Register";
 import Login from "./components/Auth/Login/Login";
 import Notes from "./components/pages/Notes";
+import AddMemberForm from "./components/HomePage/Memberform/AddMemberForm";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,7 +24,9 @@ const router = createBrowserRouter([
   },
   {
     path: "/notes",
-    element: <Notes/>
+    element: <AddMemberForm closeForm={function (): void {
+      throw new Error("Function not implemented.");
+    } }/>
   }
 ]);
 function App() {
