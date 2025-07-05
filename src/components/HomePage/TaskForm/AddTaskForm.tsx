@@ -117,24 +117,7 @@ function AddTaskForm({ closeForm, editTask, members = [] }: AddTaskFormProps) {
         />
 
         {/* Member assignment */}
-        {members.length > 0 && (
-          <div className="flex items-center gap-2">
-            <label className="text-sm text-gray-500">Assign to:</label>
-            <select
-              value={assignedMember}
-              onChange={handleMemberSelect}
-              className="rounded border p-1 text-sm"
-            >
-              <option value="">Unassigned</option>
-              {members.map((member) => (
-                <option key={member._id} value={member._id}>
-                  {member.email}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
-
+      
         {/* Options */}
         <div className="flex gap-2 border-b-2">
           <div className="mt-4 pb-2">
